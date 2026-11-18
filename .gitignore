@@ -1,8 +1,0 @@
-config.env
-state/
-logs/
-.venv/
-tc_automation/.env
-tc_automation/state.db
-__pycache__/
-.DS_Store
