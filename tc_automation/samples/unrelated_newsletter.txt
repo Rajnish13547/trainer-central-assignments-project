@@ -1,5 +1,0 @@
-Subject: Your weekly digest
-From: Medium Daily Digest <noreply@medium.com>
-Date: 2026-11-13T05:00:00Z
-
-Top stories for you: 10 ways to write better prompts; Why vector databases matter; ...
