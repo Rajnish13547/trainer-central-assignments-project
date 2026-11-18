@@ -1,0 +1,5 @@
+# Alternative to launchd (macOS/Linux): crontab -e, then add (adjust the two paths):
+*/15 * * * * cd /ABSOLUTE/PATH/TO/tc_automation && /ABSOLUTE/PATH/TO/tc_automation/.venv/bin/python run.py >> logs/cron.log 2>&1
+
+# Windows Task Scheduler (PowerShell, run once):
+# schtasks /Create /SC MINUTE /MO 15 /TN "TrainerCentralAutomation" /TR "C:\path\tc_automation\.venv\Scripts\python.exe C:\path\tc_automation\run.py"
