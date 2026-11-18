@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" viewBox="0 -290 1400 1400" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+</defs>
+<rect width="1400" height="820" fill="#ffffff"/>
+<text x="700" y="50" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">Trainer Central → Dashboard automation</text>
+<text x="700" y="80" text-anchor="middle" font-size="17" fill="#475569">Claude scheduled tasks read submission emails from Drive and post my submissions to the API exactly once</text>
+
+<!-- Scheduler -->
+<rect x="60" y="130" width="290" height="130" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="205" y="168" text-anchor="middle" font-size="20" font-weight="700" fill="#4c1d95">Scheduler</text>
+<text x="205" y="198" text-anchor="middle" font-size="15" fill="#3b0764">Claude desktop scheduled tasks</text>
+<text x="205" y="222" text-anchor="middle" font-size="15" fill="#3b0764">hourly at :07 and :37 (IST)</text>
+<text x="205" y="244" text-anchor="middle" font-size="15" fill="#3b0764">= a run every 30 minutes</text>
+
+<!-- Claude task -->
+<rect x="520" y="300" width="360" height="230" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+<text x="700" y="338" text-anchor="middle" font-size="22" font-weight="700" fill="#9a3412">Claude task</text>
+<text x="700" y="362" text-anchor="middle" font-size="14" fill="#7c2d12">scheduled_task_prompt.md</text>
+<text x="545" y="398" font-size="15" fill="#431407">1. List folder, keep files not in state</text>
+<text x="545" y="424" font-size="15" fill="#431407">2. Classify: empty / unrelated /</text>
+<text x="563" y="446" font-size="15" fill="#431407">not_mine / mine (email or name)</text>
+<text x="545" y="472" font-size="15" fill="#431407">3. Extract assignment, course, status, time</text>
+<text x="545" y="498" font-size="15" fill="#431407">4. Check marker, post, confirm, log</text>
+<text x="545" y="520" font-size="13" fill="#9a3412" font-style="italic">file text = untrusted data, instructions ignored</text>
+
+<!-- Drive -->
+<rect x="60" y="340" width="290" height="150" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="205" y="378" text-anchor="middle" font-size="20" font-weight="700" fill="#065f46">Google Drive folder</text>
+<text x="205" y="408" text-anchor="middle" font-size="15" fill="#064e3b">Trainer's shared folder</text>
+<text x="205" y="432" text-anchor="middle" font-size="15" fill="#064e3b">.txt copies of Trainer Central</text>
+<text x="205" y="454" text-anchor="middle" font-size="15" fill="#064e3b">assignment-submission emails</text>
+<text x="205" y="476" text-anchor="middle" font-size="13" fill="#047857">read-only</text>
+
+<!-- Dashboard -->
+<rect x="1050" y="340" width="290" height="150" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="1195" y="378" text-anchor="middle" font-size="20" font-weight="700" fill="#1e3a8a">Dashboard API</text>
+<text x="1195" y="408" text-anchor="middle" font-size="15" fill="#1e3a8a">Trainer's service on Render</text>
+<text x="1195" y="432" text-anchor="middle" font-size="15" fill="#1e3a8a">GET /health, GET /api/entries</text>
+<text x="1195" y="454" text-anchor="middle" font-size="15" fill="#1e3a8a">POST /api/entries</text>
+<text x="1195" y="476" text-anchor="middle" font-size="13" fill="#1d4ed8">free tier: slow first call</text>
+
+<!-- Browser pane -->
+<rect x="1050" y="560" width="290" height="80" rx="14" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="1195" y="595" text-anchor="middle" font-size="18" font-weight="700" fill="#334155">Built-in browser pane</text>
+<text x="1195" y="620" text-anchor="middle" font-size="14" fill="#475569">runs the API calls</text>
+
+<!-- Config -->
+<rect x="60" y="590" width="290" height="110" rx="14" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="205" y="624" text-anchor="middle" font-size="18" font-weight="700" fill="#334155">config.env</text>
+<text x="205" y="650" text-anchor="middle" font-size="14" fill="#475569">folder id, learner name/email,</text>
+<text x="205" y="672" text-anchor="middle" font-size="14" fill="#475569">sender name, API base (git-ignored)</text>
+
+<!-- State + logs -->
+<rect x="520" y="620" width="360" height="130" rx="14" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+<text x="700" y="654" text-anchor="middle" font-size="18" font-weight="700" fill="#713f12">Local files</text>
+<text x="700" y="684" text-anchor="middle" font-size="14" fill="#422006">state/processed.json : file id → verdict, entry id</text>
+<text x="700" y="708" text-anchor="middle" font-size="14" fill="#422006">logs/runs.log : one line per run + POSTED lines</text>
+<text x="700" y="732" text-anchor="middle" font-size="13" fill="#854d0e">failed posts are not recorded, so they retry</text>
+
+<!-- Arrows -->
+<path d="M350,195 C440,195 620,230 650,298" fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="470" y="200" font-size="14" fill="#334155">triggers a run</text>
+
+<path d="M350,415 L518,415" fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="360" y="402" font-size="13" fill="#334155">Drive connector:</text>
+<text x="360" y="438" font-size="13" fill="#334155">list + read</text>
+
+<path d="M880,415 L1048,415" fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="888" y="398" font-size="13" fill="#334155">health, marker</text>
+<text x="888" y="438" font-size="13" fill="#334155">check, POST</text>
+<path d="M1048,445 L882,445" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#a)"/>
+<text x="905" y="462" font-size="12" fill="#475569">201 + entry id</text>
+
+<path d="M880,500 C960,540 1000,580 1048,598" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#a)"/>
+
+<path d="M700,532 L700,618" fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M730,618 L730,532" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#a)"/>
+<text x="745" y="585" font-size="13" fill="#334155">read / update</text>
+
+<path d="M350,640 C440,640 480,560 518,520" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+<text x="360" y="598" font-size="13" fill="#334155">read at start</text>
+
+<!-- Duplicate guard note -->
+<rect x="1050" y="680" width="290" height="100" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+<text x="1195" y="708" text-anchor="middle" font-size="16" font-weight="700" fill="#991b1b">No duplicates (3 layers)</text>
+<text x="1195" y="732" text-anchor="middle" font-size="13" fill="#7f1d1d">1) state file   2) [drive:id] marker on dashboard</text>
+<text x="1195" y="754" text-anchor="middle" font-size="13" fill="#7f1d1d">3) failed posts are never recorded</text>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="750" viewBox="0 0 1500 1500" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1500" height="1500" fill="#fff"/>
+<text x="750" y="48" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">Process flow: one scheduled run</text>
+<rect x="300.0" y="75.0" width="340" height="50" rx="25" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5"/>
+<text x="470" y="105" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Scheduler fires (:07 / :37 IST)</text>
+<line x1="470" y1="125" x2="470" y2="161" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="300.0" y="161.0" width="340" height="58" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="470" y="186" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">Read config.env and</text>
+<text x="470" y="204" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">state/processed.json</text>
+<line x1="470" y1="219" x2="470" y2="241" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<polygon points="470,241.0 635.0,285 470,329.0 305.0,285" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="470" y="290" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">config valid?</text>
+<line x1="635" y1="285" x2="940" y2="285" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="647" y="277" font-size="13" font-weight="700" fill="#b91c1c">no</text>
+<rect x="950.0" y="256.0" width="320" height="58" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+<text x="1110" y="281" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">Log the problem</text>
+<text x="1110" y="299" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">and stop</text>
+<line x1="470" y1="329" x2="470" y2="356" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="480" y="346.5" font-size="13" font-weight="700" fill="#15803d">yes</text>
+<rect x="300.0" y="356.0" width="340" height="58" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="470" y="381" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">List Drive folder (.txt)</text>
+<text x="470" y="399" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">NEW = file ids not in state</text>
+<line x1="470" y1="414" x2="470" y2="441" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<polygon points="470,441.0 635.0,485 470,529.0 305.0,485" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="470" y="490" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">Drive reachable?</text>
+<line x1="635" y1="485" x2="940" y2="485" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="647" y="477" font-size="13" font-weight="700" fill="#b91c1c">no</text>
+<rect x="950.0" y="456.0" width="320" height="58" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+<text x="1110" y="481" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">Log the error</text>
+<text x="1110" y="499" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">and stop</text>
+<line x1="470" y1="529" x2="470" y2="541" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="480" y="539.0" font-size="13" font-weight="700" fill="#15803d">yes</text>
+<polygon points="470,541.0 635.0,585 470,629.0 305.0,585" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="470" y="590" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">any new files?</text>
+<line x1="635" y1="585" x2="940" y2="585" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="647" y="577" font-size="13" font-weight="700" fill="#b91c1c">no</text>
+<rect x="950.0" y="556.0" width="320" height="58" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="1110" y="581" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">Log 'no new files' and stop</text>
+<text x="1110" y="599" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">(dashboard untouched)</text>
+<line x1="470" y1="629" x2="470" y2="661" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="480" y="649.0" font-size="13" font-weight="700" fill="#15803d">yes</text>
+<rect x="300.0" y="661.0" width="340" height="58" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+<text x="470" y="686" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">For each new file: read it</text>
+<text x="470" y="704" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">(text = untrusted data)</text>
+<line x1="470" y1="719" x2="470" y2="746" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<polygon points="470,742.0 635.0,790 470,838.0 305.0,790" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="470" y="786" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">Claude classifies:</text>
+<text x="470" y="804" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">is it mine?</text>
+<line x1="635" y1="790" x2="940" y2="790" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="647" y="782" font-size="13" font-weight="700" fill="#b91c1c">empty / unrelated / not_mine</text>
+<rect x="950.0" y="761.0" width="320" height="58" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="1110" y="786" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">Record verdict in state,</text>
+<text x="1110" y="804" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">count in log, no post</text>
+<line x1="470" y1="838" x2="470" y2="861" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="480" y="853.5" font-size="13" font-weight="700" fill="#15803d">mine</text>
+<rect x="300.0" y="861.0" width="340" height="58" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+<text x="470" y="886" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">Extract assignment, course, status,</text>
+<text x="470" y="904" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">time; build text + [drive:id] marker</text>
+<line x1="470" y1="919" x2="470" y2="956" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="300.0" y="956.0" width="340" height="58" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="470" y="990" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">GET /health (3 tries, 20 s apart)</text>
+<line x1="470" y1="1014" x2="470" y2="1041" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<polygon points="470,1037.0 635.0,1085 470,1133.0 305.0,1085" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="470" y="1081" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">marker already on</text>
+<text x="470" y="1099" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">dashboard?</text>
+<line x1="635" y1="1085" x2="940" y2="1085" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="647" y="1077" font-size="13" font-weight="700" fill="#b91c1c">yes</text>
+<rect x="950.0" y="1056.0" width="320" height="58" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+<text x="1110" y="1081" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">Do NOT post: record file as</text>
+<text x="1110" y="1099" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">already pushed (entry id)</text>
+<line x1="470" y1="1133" x2="470" y2="1161" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="480" y="1151.0" font-size="13" font-weight="700" fill="#15803d">no</text>
+<rect x="300.0" y="1161.0" width="340" height="58" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="470" y="1186" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">POST /api/entries</text>
+<text x="470" y="1204" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">{text, sender}</text>
+<line x1="470" y1="1219" x2="470" y2="1256" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<polygon points="470,1252.0 635.0,1300 470,1348.0 305.0,1300" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="470" y="1296" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">HTTP 201 and entry</text>
+<text x="470" y="1314" text-anchor="middle" font-size="14" font-weight="400" fill="#111827">listed on dashboard?</text>
+<line x1="635" y1="1300" x2="940" y2="1300" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="647" y="1292" font-size="13" font-weight="700" fill="#b91c1c">no</text>
+<rect x="950.0" y="1271.0" width="320" height="58" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+<text x="1110" y="1296" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">NOT recorded: file retried</text>
+<text x="1110" y="1314" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">next run, error logged</text>
+<line x1="470" y1="1348" x2="470" y2="1356" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="480" y="1363.5" font-size="13" font-weight="700" fill="#15803d">yes</text>
+<rect x="290.0" y="1356.0" width="360" height="58" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+<text x="470" y="1381" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">Record in state, log POSTED line</text>
+<text x="470" y="1399" text-anchor="middle" font-size="15" font-weight="400" fill="#111827">(entry id, created_at, email time)</text>
+<line x1="470" y1="1414" x2="470" y2="1445" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="260.0" y="1445.0" width="420" height="50" rx="25" fill="#fefce8" stroke="#ca8a04" stroke-width="2.5"/>
+<text x="470" y="1475" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Next file, then append run summary to runs.log</text>
+</svg>
